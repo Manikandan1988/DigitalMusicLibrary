@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DigitalMusicLibrary.Models.ViewModels.DisplayMusicDetailViewModel>
+
+@{
+    ViewBag.Title = "ViewMusicDetails";
+}
+
+<h2>View Music Details</h2>
+
+<div class="form-group">
+    @Html.Label("search By", new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        <input type="text" id="searchBy" name="searchBy" />
+    </div>
+    <div class="col-md-4">
+        <input type="button" name="btnSubmit" value="Search" />
+    </div>
+    <br />
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbuName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComposerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleasedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbuName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComposerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleasedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtistName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+        </tr>
+    }
+
+</table>
